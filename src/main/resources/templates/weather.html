@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <link th:href="@{/styles.css}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1 th:text="|Weather info for ${city.name}|">...</h1>
+    <p th:text="${weather.main}"></p>
+    <p th:text="${weather.description}"></p>
+    <p th:text="|Temperature ${weather.getWeatherDetails.getTemp()} deg|"></p>
+    <p th:text="|Fells like ${weather.getWeatherDetails.getFeelsLike()} deg|"></p>
+    <p th:text="|Max ${weather.getWeatherDetails.getTempMax()} deg|"></p>
+    <p th:text="|Min ${weather.getWeatherDetails.getTempMin()} deg|"></p>
+    <p th:text="|Humidity ${weather.getWeatherDetails.getHumidity()} %|"></p>
+    <p th:text="|Pressure ${weather.getWeatherDetails.getPressure()} PSI|"></p>
+</div>
+</body>
+</html>
